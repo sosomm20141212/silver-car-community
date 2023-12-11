@@ -1,4 +1,4 @@
-package com.kepco.silver_car_community.controller;
+package com.kepco.scc.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,8 +1,4 @@
-package com.kepco.silver_car_community.model;
-
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package com.kepco.scc.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,27 +6,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Data
 @Entity
-public class Posting {
+public class Review {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int postingSeq;
+    private int reviewSeq;
     @ManyToOne
     @JoinColumn(name="user_id")
     private Account account;
-    private String title;
+    @ManyToOne
+    @JoinColumn(name="vehicle_name")
+    private Vehicle vehicle;
     private String content;
-    private int type;
-    private int view;
+    private double rating;
     private String registrationDate;
-    @OneToMany
-    @JsonIgnore
-    private List<Attachement> attachements;
-    @OneToMany
-    @JsonIgnore
-    private List<Comment> comments;
 }

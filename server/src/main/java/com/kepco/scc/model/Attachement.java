@@ -1,4 +1,4 @@
-package com.kepco.silver_car_community.model;
+package com.kepco.scc.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
