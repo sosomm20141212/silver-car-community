@@ -1,4 +1,4 @@
-package com.kepco.silver_car_community.silvercarcommunity;
+package com.kepco.silver_car_community;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
