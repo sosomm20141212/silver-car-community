@@ -1,0 +1,13 @@
+#Header_Logo{
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+#Header_Logo> a {
+   margin: 0 auto;
+}
+#Logo_img{
+    width:400px;
+    height: 100px;
+    border: none;
+}
