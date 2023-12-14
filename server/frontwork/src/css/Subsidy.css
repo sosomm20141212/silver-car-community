@@ -1,0 +1,49 @@
+.Subsidy {
+  height: 150px;
+  background: linear-gradient(55deg, #fdd72b, #f88615, #fdd72b);
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: row; 
+  font-size:20px;
+}
+
+.right-content{
+display: flex;
+justify-content: space-around;
+
+}
+.question {
+text-align: left;
+margin-right:100px;
+color: white;
+font-weight: bold;
+font-size: 25px;
+}
+
+.check_subsidy, .check_sale_company {
+text-align: left; 
+margin-left: 20px;
+border-radius: 5px;
+height: 80px;
+border: solid 2px white;
+padding: 10px;
+justify-content: center;
+}
+
+.check_subsidy a,
+.check_sale_company a
+{
+text-decoration: none;
+color: rgb(255, 255, 255);
+font-size: 20px;
+margin-right:10px;
+font-weight: bold;
+}
+.check_subsidy>a>p,.check_sale_company>a>p{
+text-align: left;
+font-size: 15px;
+color: rgb(255, 255, 255);
+}
