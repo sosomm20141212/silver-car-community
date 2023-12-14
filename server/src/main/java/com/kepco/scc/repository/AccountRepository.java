@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.kepco.scc.model.Account;
 
 public interface AccountRepository extends JpaRepository<Account,String>{
-    
+    Account findByUserIdAndPassword(String userId, String password);
 }
