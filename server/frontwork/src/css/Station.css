@@ -1,0 +1,122 @@
+/*Station.js*/
+section {
+    width: 1400px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  #searchSession{
+    width: 1400px;
+  }
+  
+  h2 {
+    display: inline-block;
+    margin-right: 750px;
+    color: #12345b;
+  }
+  #selectCity {
+    display: inline-block;
+  }
+  
+  #selectCity > select{
+    margin-right: 20px;
+    block-size: 35px;
+    border-radius: 3px;
+    width: 170px;
+    font-size: 17px;
+  }
+
+  #station_btn {
+    block-size: 35px;
+    border-radius: 3px;
+    border: none;
+    background-color: #fdbd7d;
+    color: #12345b;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  #station_btn:hover {
+    cursor: pointer;
+    background-color: #ffa74e;
+  }
+  
+  #stationTableSession {
+    display: flex;
+    justify-content: center;
+    /* height: 500px; */
+  }
+  
+  #station_tableDiv{
+    width: 1300px;
+    height: 1000px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  #station_table{
+    /* border: solid 1px rgb(104, 103, 103); */
+    border-radius: 1px;
+    width: 1300px;
+  }
+  
+  #station_table>thead{
+    background-color: #fdbd7d;
+    font-size: 15px;
+    color: #12345b;
+  }
+  
+  #station_table>tbody{
+    font-size: 15px;
+    color: #12345b;
+  }
+
+  #station_table>th, #station_table>td{
+    padding: 5px;
+  }
+
+  #station_table>tbody > tr > td:nth-child(1)  {
+    width: 25px;
+  }
+  #station_table>tbody > tr > td:nth-child(2)  {
+    width: 150px;
+  }
+  #station_table>tbody > tr > td:nth-child(3)  {
+    text-align: left;
+  }
+  #station_table>tbody > tr > td:nth-child(4)  {
+    width: 97px;
+  }
+  #station_table> tbody > tr > td:nth-child(5)  {
+    width: 97px;
+  }
+  #station_table>tbody > tr > td:nth-child(6)  {
+    width: 97px;
+  }
+  #station_table>tbody > tr > td:nth-child(7)  {
+    width: 30px;
+  }
+  #station_table>tbody > tr > td:nth-child(8)  {
+    width: 60px;
+  }
+  #station_table>tbody > tr > td:nth-child(9)  {
+    width: 50px;
+  }
+  #station_table>tbody > tr > td:nth-child(11)  {
+    width: 150px;
+  }
+  
+
+  /* 테이블 스크롤바 */
+#station_tableDiv::-webkit-scrollbar {
+  width: 10px;
+}
+#station_tableDiv::-webkit-scrollbar-thumb{
+  
+  background-color: #FFA74E;
+  border-radius: 10px;
+}
+#station_tableDiv::-webkit-scrollbar-track{
+  background-color: white;
+  box-shadow: inset 0px 0px 5px lightgray;
+}
+   

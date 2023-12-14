@@ -1,0 +1,134 @@
+
+
+.login-form {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+  max-width: 430px;
+  margin: 60px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  box-sizing: border-box;
+  
+}
+.login-form:before, .login-form:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.login-h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.login-h1:before, .login-h1:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.login-title{
+  margin-bottom: 30px;
+}
+
+.login-input {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+.login-input:before, .login-input:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.login-button {
+  padding: 15px 39px;
+  color: #FFF;
+  background-color: #ffa74e;
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #ff9f3f;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.login-button:hover{
+  background-color: #ff8f20;
+  border: 1px solid #fa7f04;
+  padding: 15px 39px;
+  color: #FFF;
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.login-button:before, .login-button:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.login-label {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.login-label:before, .login-label:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.login-labe.light {
+  font-weight: 300;
+  display: inline;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.checkMember{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
