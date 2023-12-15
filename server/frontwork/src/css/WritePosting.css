@@ -9,12 +9,14 @@
   padding: 30px;
   margin: 150px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
 }
 #contact h3 {
   display: block;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 23px;
+  color: #12345b;
 }
 fieldset {
   border: medium none !important;
@@ -32,6 +34,7 @@ fieldset {
   margin: 0 0 5px;
   padding: 15px;
   font-size: 25px;
+  border-radius: 5px;
 }
 #contact input[type="text"]:hover,
 #contact textarea:hover {
@@ -51,15 +54,16 @@ fieldset {
   width: 100%;
   border: none;
   background: #FFA74E;
-  color: black;
+  color: #12345b;
   font-weight: bold;
-  margin: 0 0 5px;
+  margin: 0 0 13px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 23px;
+  border-radius: 5px;
 }
 #contact button[type="submit"]:hover,
 #contact button[type="button"]:hover {
-  background: #f49434;
+  background: #ff9429;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;

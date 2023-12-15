@@ -12,11 +12,11 @@
 .free_posting a{
     color:white;
     font-size:25px;
-    margin: 0 70px;
+    margin: 0 40px;
     text-decoration: none;
     cursor:pointer;
     font-weight: bold;
-    
+    padding: 5px 30px;
 }
 
 .search_car a:hover,
@@ -24,6 +24,7 @@
 .charge_center a:hover,
 .free_posting a:hover{
    background-color: #FF7E00;
+   border-radius: 5px;
 }
 
 

@@ -49,7 +49,7 @@ const BulletinBoard = ({setMode}) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="wrap">
             <select {...register("type")}>
-              <option value={"userId"}>작성자</option>
+              <option value={"userId"} >작성자</option>
               <option value={"title"} >제목</option>
               <option value={"content"} >내용</option>
             </select>
