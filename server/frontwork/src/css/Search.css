@@ -44,6 +44,20 @@ label {
     box-shadow: 0px 0px 5px gray;
     font-size: 20px;
 }
+.Search_madeType,
+.Search_wheelsType,
+.Search_VehicleType :hover{
+  cursor: pointer;
+  width: 230px; /* 원하는 너비 설정 */
+  height:50px;
+  margin:10px;
+  border: solid 1px lightgray;
+  box-shadow: 0px 0px 5px gray;
+  font-size: 20px;
+}
+.Search_VehicleType:hover{
+  cursor: pointer;
+}
 
 .Search_madeType:focus,
 .Search_wheelsType:focus,
