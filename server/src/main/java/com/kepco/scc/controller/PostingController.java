@@ -66,7 +66,7 @@ public class PostingController {
     public void writePosting(@RequestBody Map<String,String> data) {
         Posting newPosting = new Posting();
         Account accessAccount = accountDB.findByUserId(data.get("userId"));
-        
+
         newPosting.setAccount(accessAccount);
         newPosting.setTitle(data.get("title"));
         newPosting.setContent(data.get("content"));

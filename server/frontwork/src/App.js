@@ -13,6 +13,7 @@ import CheckSubsidy from './components/CheckSubsidy';
 import SearchCarDetail from './components/SearchCarDetail';
 import SaleCompany from './components/SaleCompany';
 import ChargeCenter from './components/ChargeCenter';
+import FreePosting from './components/FreePosting';
 import PostingPage from './components/PostingPage';
 import Register from './components/Register';
 import './App.css'

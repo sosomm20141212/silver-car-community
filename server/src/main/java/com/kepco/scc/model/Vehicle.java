@@ -24,5 +24,4 @@ public class Vehicle {
     private String mileage;
     private String chargingTime;
     private String weight;
-    private int view;
 }

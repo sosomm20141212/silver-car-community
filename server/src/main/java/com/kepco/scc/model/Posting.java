@@ -26,7 +26,6 @@ public class Posting {
     private Account account;
     private String title;
     private String content;
-    private int view;
     private String registrationDate;
     @OneToMany(mappedBy="posting", cascade=CascadeType.REMOVE)
     @JsonIgnore

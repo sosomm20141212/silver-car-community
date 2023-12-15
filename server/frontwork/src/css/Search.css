@@ -34,21 +34,23 @@ label {
   margin-bottom: 10px;
 }
 
-.Search_vehicleType,
-.Search_priceRange,
-.Search_colorType {
+.Search_madeType,
+.Search_wheelsType,
+.Search_VehicleType {
     width: 230px; /* 원하는 너비 설정 */
     height:50px;
     margin:10px;
     border: solid 1px lightgray;
     box-shadow: 0px 0px 5px gray;
+    font-size: 20px;
 }
 
-.Search_vehicleType:focus,
-.Search_priceRange:focus,
-.Search_colorType:focus {
+.Search_madeType:focus,
+.Search_wheelsType:focus,
+.Search_VehicleType:focus {
     outline: none;
 }
+
 
 .option_name{
   display: none;

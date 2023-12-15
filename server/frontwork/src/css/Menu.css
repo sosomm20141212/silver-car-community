@@ -12,10 +12,11 @@
 .free_posting a{
     color:white;
     font-size:25px;
-    margin: 0 30px;
+    margin: 0 70px;
     text-decoration: none;
     cursor:pointer;
     font-weight: bold;
+    
 }
 
 .search_car a:hover,
