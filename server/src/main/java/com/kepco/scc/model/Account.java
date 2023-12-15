@@ -26,7 +26,4 @@ public class Account {
     @OneToMany(mappedBy="account", cascade=CascadeType.REMOVE)
     @JsonIgnore
     private List<Comment> comments = new ArrayList<>();
-    @OneToMany(mappedBy="account", cascade=CascadeType.REMOVE)
-    @JsonIgnore
-    private List<Review> reviews = new ArrayList<>();
 }

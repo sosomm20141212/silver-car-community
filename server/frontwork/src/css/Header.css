@@ -2,7 +2,7 @@
     height:50px;
     background-color: #f5f5f5;
     display: flex;
-    /* position:fixed; */
+    position: fixed;
     width:100%;
     justify-content:right;
     align-items:center;
@@ -24,4 +24,11 @@
 .register a:hover {
   color: #FFA74E;
   font-weight: bold;
+}
+
+.loggined-id{
+  display:flex;
+  font-size: 18px;
+  color: #666666; 
+  align-items: center;
 }

@@ -14,6 +14,7 @@ import SearchCarDetail from './components/SearchCarDetail';
 import SaleCompany from './components/SaleCompany';
 import ChargeCenter from './components/ChargeCenter';
 import FreePosting from './components/FreePosting';
+import PostingPage from './components/PostingPage';
 import Register from './components/Register';
 import './App.css'
 
@@ -40,7 +41,7 @@ function App() {
                   <Route path='/search_car_detail' element={<SearchCarDetail/>} />
                   <Route path='/sale_company' element={<SaleCompany />} />
                   <Route path='/charge_center' element={<ChargeCenter />} />
-                  <Route path='/free_posting' element={<FreePosting />} />
+                  <Route path='/free_posting' element={<PostingPage />} />
                   <Route path='/check_subsidy' element={<CheckSubsidy />} />
                 </Routes>
               </Layout>

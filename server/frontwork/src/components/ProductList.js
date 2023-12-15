@@ -2,7 +2,7 @@ import '../css/ProductList.css';
 import axios from 'axios';
 import {BrowserRouter,Link, useParams} from "react-router-dom"
 import React, { useEffect, useState } from "react";
-
+import Productinfo from './Productinfo';
 const ProductList = ()=>{
     const [productList, setProductList] = useState([]);
     const [productinfo, setProductinfo] = useState({ "vehicleName": "C-1",
@@ -54,92 +54,28 @@ const ProductList = ()=>{
                 </nav>
             </div>
             
-            <div className='product_detail'>
-                <div>
-                    <h3 id='product_info_title'>Product Info</h3>
-                    <h1>{productinfo.vehicleName}</h1>
-                </div>
-                
-                <div className='product_info'>
-                    <img src = {`/vehicle_image/${productinfo.vehicleName}.jpg`}/>
-                    
-                    <div id='product_tableDiv'>
-                        <table id="product_table">
-                            <tr>
-                                <td>제조사</td>
-                                <td className='td_size'>{productinfo.manufacturer}</td>
-                            </tr>
-                            <tr>
-                                <td>색상</td>
-                                <td>{productinfo.color}</td>
-                            </tr>
-                            <tr>
-                                <td>가로X폭X높이</td>
-                                <td>{productinfo.dimensions}</td>
-                            </tr>
-                            <tr>
-                                <td>화물칸사이즈</td>
-                                <td>{productinfo.cargoSize}</td>
-                            </tr>
-                            <tr>
-                                <td>화물칸 최대중량</td>
-                                <td>{productinfo.loadCapacity}</td>
-                            </tr>
-                            <tr>
-                                <td>그늘막 유무</td>
-                                <td>{productinfo.canopy}</td>
-                            </tr>
-                            <tr>
-                                <td>바퀴 3륜/4륜</td>
-                                <td>{productinfo.wheels}</td>
-                            </tr>
-                            <tr>
-                                <td>바퀴사이즈</td>
-                                <td>{productinfo.wheelSize}</td>
-                            </tr>
-                            <tr>
-                                <td>배터리정격</td>
-                                <td>{productinfo.battery}</td>
-                            </tr>
-                            <tr>
-                                <td>최대출력</td>
-                                <td>{productinfo.maximumOutput}</td>
-                            </tr>
-                            <tr>
-                                <td>최대속도</td>
-                                <td>{productinfo.maximumSpeed}</td>
-                            </tr>
-                            <tr>
-                                <td>최대거리</td>
-                                <td>{productinfo.mileage}</td>
-                            </tr>
-                            <tr>
-                                <td>충전시간</td>
-                                <td>{productinfo.chargingTime}</td>
-                            </tr>
-                            <tr>
-                                <td>차량무게</td>
-                                <td>{productinfo.weight}</td>
-                            </tr>
-                        </table>
-
-                        <div className='product_price'>
-                            <span>제품 가격</span>
-                            <p id="price">{productinfo.price}</p>
-                        </div>
-                        <Link to={`https://search.shopping.naver.com/search/all?query=전동차${productinfo.vehicleName}`}>
-                        <button className='Order_btn'><span>주문하기</span></button>
-                        </Link>
-                     
-                    </div>
-                    
-                </div>
-
-            </div>
-            
+            <div className='product_detail'>           
+                <Productinfo
+                        vehicleName = {productinfo.vehicleName}
+                        manufacturer= {productinfo.manufacturer}
+                        price= {productinfo.price}
+                        color= {productinfo.color}
+                        dimensions= {productinfo.dimensions}
+                        cargoSize= {productinfo.cargoSize}
+                        loadCapacity= {productinfo.loadCapacity}
+                        canopy= {productinfo.canopy}
+                        wheels= {productinfo.wheels}
+                        wheelSize= {productinfo.wheelSize}
+                        battery= {productinfo.battery}
+                        maximumOutput= {productinfo.maximumOutput}
+                        maximumSpeed= {productinfo.maximumSpeed}
+                        mileage= {productinfo.mileage}
+                        chargingTime= {productinfo.chargingTime}
+                        weight= {productinfo.weight}
+                        view = {productinfo.view}/>
+            </div>       
         </div>
     );
 };
-
 
 export default ProductList;

@@ -1,0 +1,31 @@
+.read-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.read-container table {
+  border-collapse: collapse;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30px 30px 100px;
+}
+
+.posting-container {
+  background-color: white;
+  margin-bottom: 20px;
+}
+.posting-container thead{
+  font-size: 30px;
+  background-color: #FFA74E;
+}
+
+.comment-container {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.reply-container {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin-bottom: 5px;
+}

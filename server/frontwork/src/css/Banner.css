@@ -80,9 +80,7 @@
 }
 
 
-.banner_video::-webkit-media-controls-mute-button {
-    display: none !important;
-}
+
 
 
 .banner_video::-webkit-media-controls-volume-slider {

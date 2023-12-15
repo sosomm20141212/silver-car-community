@@ -26,12 +26,7 @@ public class Posting {
     private Account account;
     private String title;
     private String content;
-    private int type;
-    private int view;
     private String registrationDate;
-    @OneToMany(mappedBy="posting", cascade=CascadeType.REMOVE)
-    @JsonIgnore
-    private List<Attachement> attachements = new ArrayList<>();
     @OneToMany(mappedBy="posting", cascade=CascadeType.REMOVE)
     @JsonIgnore
     private List<Comment> comments = new ArrayList<>();

@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kepco.scc.repository.AccountRepository;
 import com.kepco.scc.model.Account;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @RestController
@@ -25,23 +26,20 @@ public class RegisterController {
         return accountRepository.findAll();
     }
 
-    //{userId: 'aaa', password: '1111', confirmPassword: '1111', email: 'aaa@aaa'}
     @PostMapping("/api/register")
     public ResponseEntity<String> registerAccount(@RequestBody Map<String, String> accountlist) {
         String userId = accountlist.get("userId");
         String password = accountlist.get("password");
         String email = accountlist.get("email");
-
-        String now = LocalDate.now().toString();
+        String now = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")).toString();
         
         Account account = new Account();
         account.setUserId(userId);
         account.setPassword(password);
         account.setEmail(email);
         account.setRegistrationDate(now);
-
-
         accountRepository.save(account);
+        
         return ResponseEntity.ok("회원가입 성공. 환영합니다.");
     }
 }
