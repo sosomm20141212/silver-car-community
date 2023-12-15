@@ -1,4 +1,4 @@
-package com.kepco.silver_car_community.silvercarcommunity;
+package com.kepco.scc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -5,7 +5,7 @@ import WritePosting from "./WritePosting";
 import ReadPosting from "./ReadPosting";
 
 const PostingPage = () => {
-  const [mode, setMode] = useState(-1);
+  const [mode, setMode] = useState(0);
 
   const changeMode = (newMode) => {
     setMode(newMode);
