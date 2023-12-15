@@ -1,0 +1,24 @@
+.read-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.posting-container {
+  background-color: #e0e0e0;
+  margin-bottom: 20px;
+}
+.posting-container h1:nth-of-type(1){
+  background-color: #FFA74E;
+}
+
+.comment-container {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.reply-container {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin-bottom: 5px;
+}

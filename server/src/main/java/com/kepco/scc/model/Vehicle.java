@@ -1,14 +1,7 @@
 package com.kepco.scc.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Data
@@ -32,7 +25,4 @@ public class Vehicle {
     private String chargingTime;
     private String weight;
     private int view;
-    @OneToMany(mappedBy="vehicle", cascade=CascadeType.REMOVE)
-    @JsonIgnore
-    private List<Review> reviews = new ArrayList<>();
 }

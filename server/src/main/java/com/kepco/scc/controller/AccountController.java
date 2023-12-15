@@ -3,7 +3,6 @@ package com.kepco.scc.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +18,6 @@ import com.kepco.scc.repository.AccountRepository;
 @RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:3000")
 public class AccountController {
-
     @Autowired
     AccountRepository accountRepository;
 
@@ -30,8 +28,6 @@ public class AccountController {
         
         Account account = accountRepository.findByUserIdAndPassword(userId, password);
         
-        
-
         if (account != null) {
             return userId;
         } else {
