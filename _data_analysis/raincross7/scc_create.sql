@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   `user_id` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `admin` tinyint NOT NULL,
+  `admin` tinyint DEFAULT '0',
   `registration_date` varchar(50) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -15,22 +15,11 @@ CREATE TABLE IF NOT EXISTS `posting` (
   `user_id` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `content` text NOT NULL,
-  `type` tinyint NOT NULL,
   `view` int NOT NULL DEFAULT '0',
   `registration_date` varchar(50) NOT NULL,
   PRIMARY KEY (`posting_seq`),
   KEY `user_id_posting_pk` (`user_id`),
   CONSTRAINT `user_id_posting_pk` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE IF NOT EXISTS `attachment` (
-  `uid` varchar(100) NOT NULL,
-  `file_name` varchar(100) NOT NULL,
-  `posting_seq` int NOT NULL,
-  `registration_date` varchar(50) NOT NULL,
-  PRIMARY KEY (`uid`),
-  KEY `posting_seq_attachement_pk` (`posting_seq`),
-  CONSTRAINT `posting_seq_attachement_pk` FOREIGN KEY (`posting_seq`) REFERENCES `posting` (`posting_seq`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE IF NOT EXISTS `comment` (
@@ -66,20 +55,6 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `weight` varchar(50) DEFAULT NULL,
   `view` int DEFAULT '0',
   PRIMARY KEY (`vehicle_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE IF NOT EXISTS `review` (
-  `review_seq` int NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(50) NOT NULL,
-  `vehicle_name` varchar(50) NOT NULL,
-  `content` varchar(255) NOT NULL,
-  `rating` float NOT NULL,
-  `registration_date` varchar(50) NOT NULL,
-  PRIMARY KEY (`review_seq`),
-  KEY `user_id_review_pk` (`user_id`),
-  KEY `vehicle_name_pk` (`vehicle_name`),
-  CONSTRAINT `user_id_review_pk` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE CASCADE,
-  CONSTRAINT `vehicle_name_pk` FOREIGN KEY (`vehicle_name`) REFERENCES `vehicle` (`vehicle_name`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE IF NOT EXISTS `station` (
