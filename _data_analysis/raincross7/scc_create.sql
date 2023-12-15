@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `posting` (
   `user_id` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `content` text NOT NULL,
-  `view` int NOT NULL DEFAULT '0',
   `registration_date` varchar(50) NOT NULL,
   PRIMARY KEY (`posting_seq`),
   KEY `user_id_posting_pk` (`user_id`),
@@ -53,7 +52,6 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `mileage` varchar(50) DEFAULT NULL,
   `charging_time` varchar(50) DEFAULT NULL,
   `weight` varchar(50) DEFAULT NULL,
-  `view` int DEFAULT '0',
   PRIMARY KEY (`vehicle_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
