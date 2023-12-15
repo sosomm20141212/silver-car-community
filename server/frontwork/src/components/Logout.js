@@ -8,13 +8,12 @@ function Logout() {
         window.sessionStorage.removeItem('accessId');
         alert("로그아웃 되었습니다");
         navigate("/");
-        
     });
 
     return(
         <div></div>
     )
-    }
+}
 
 
 export default Logout;

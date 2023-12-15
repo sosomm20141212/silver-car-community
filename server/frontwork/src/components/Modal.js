@@ -10,7 +10,6 @@ function Modal() {
 
     return (
         <div>
-            <button onClick={showModal}>모달 예시</button>
             {modalOpen && <ModalBasic setModalOpen={setModalOpen}/>}
         </div>
     )

@@ -59,6 +59,7 @@ public class PostingController {
                 searchData = postingDB.findAll();
                 break;
         }
+        Collections.reverse(searchData);
 
         return searchData;
     }
