@@ -11,8 +11,7 @@ body {
   font-weight: 100;
   margin: 24px auto;
   width: 55rem;
-  overflow-y: auto;
-  max-height: 700px;
+  max-height: 650px;
 }
 .blog-container a {
   color: #4d4dff;
@@ -37,8 +36,10 @@ body {
 
 /* Blog body */
 .blog-body {
-  margin: 0 auto;
+  margin: 5px auto;
   width: 80%;
+  height: 70px;
+  border-radius: 10px;
 }
 .blog-title {
   display: flex;
@@ -131,13 +132,15 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  margin-left: 150px;
+  margin-left: 200px;
 }
 .search-container select {
   width: 110px; height: 50px;
-  font-size: 25px;
+  font-size: 20px;
   border: 3px solid #FFA74E;
   border-radius: 5px;
+  margin-right: 20px;
+  margin-left: 185px;
 }
 .search-container select:hover {
   cursor: pointer;
@@ -146,11 +149,11 @@ body {
   outline: none;
 }
 .search {
-  width: 400px;
+  width: 800px;
   display: flex;
 }
 .searchTerm {
-  width: 400px;
+  width: 673px;
   border: 3px solid #FFA74E;
   border-right: none;
   padding: 5px;
@@ -163,7 +166,7 @@ body {
   color: black;
 }
 .searchButton {
-  width: 50px;
+  width: 80px;
   height: 50px;
   border: 1px solid #FFA74E;
   background: #FFA74E;
@@ -173,6 +176,10 @@ body {
   cursor: pointer;
   font-size: 20px;
 }
+.searchButton:hover{
+  background: #ff9429;
+}
+
 .wrap {
   width: 30%;
   /* position: absolute; */
@@ -193,7 +200,12 @@ body {
   background-color: #FFA74E;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 25px;
-  margin-left: 5px;
-  margin-right: 5px;
+  font-size: 23px;
+  margin-left: 288px;
+  margin-right: 288px;
+  font-weight: bold;
+  color: #12345b;
+}
+.write button:hover{
+  background: #ff9429;
 }

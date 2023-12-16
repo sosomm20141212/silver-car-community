@@ -16,7 +16,9 @@
 }
 
 #product_info_title{
+    margin-top: 35px;
     margin-bottom: 0px;
+    font-size: 20px;
 }
 
 .product_info{
@@ -76,6 +78,7 @@
 
 .Order_btn:hover{
     background-color: #ff972f;
+    cursor: pointer;
 }
 
 .Order_btn>span{

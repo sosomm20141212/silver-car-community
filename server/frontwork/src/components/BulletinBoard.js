@@ -49,12 +49,13 @@ const BulletinBoard = ({setMode}) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="wrap">
             <select {...register("type")}>
-              <option value={"userId"}>작성자</option>
+              <option value={"userId"} >작성자</option>
               <option value={"title"} >제목</option>
               <option value={"content"} >내용</option>
             </select>
             <div className="search">
               <input type="text" className="searchTerm" placeholder="검색어를 입력하세요" {...register("text", {required: true})}></input>
+              <button type="submit" className="searchButton">검색</button>
             </div>
           </div>
         </form>
@@ -71,7 +72,6 @@ const BulletinBoard = ({setMode}) => {
           <div className="blog-footer">
             <ul>
               <li className="published-date">{post.registrationDate}</li>
-              <li className="shares"><a href="#"><svg className="icon-star"><use xlinkHref="#icon-star"></use></svg><span className="numero">{post.view}</span></a></li>
             </ul>
           </div>
         </div>

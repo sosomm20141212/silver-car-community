@@ -30,15 +30,9 @@ const ReadPosting = ({setMode, postingNumber}) => {
       {sumData && (
         <div className="read-container" key={sumData.posting.id}>
           <div className="posting-container">
-            <table>
-              <thead>
-                <tr><th>{sumData.posting.account.userId}</th><th>{sumData.posting.registrationDate}</th><th>{sumData.posting.view}</th></tr>
-              </thead>
-
-              
-              <tr><td>{sumData.posting.title}</td></tr>
-              <tr><td>{sumData.posting.content}</td></tr>
-            </table>
+            <p>{sumData.posting.account.userId}</p><p>{sumData.posting.registrationDate}</p>
+            <p>{sumData.posting.title}</p>
+            <p>{sumData.posting.content}</p>
           </div>
           {sumData.comments.map(comment => (
             <div className="none-posting-container" key={comment.id}>
@@ -54,7 +48,7 @@ const ReadPosting = ({setMode, postingNumber}) => {
                   <h3>{reply.registrationDate}</h3>
                 </div>
               ))}
-              <p>-----------------------------------------------------------------</p>
+              <hr></hr>
             </div>
           ))}
         </div>

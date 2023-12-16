@@ -47,3 +47,8 @@ text-align: left;
 font-size: 15px;
 color: rgb(255, 255, 255);
 }
+
+.check_subsidy ,
+.check_sale_company a :hover{
+  cursor: pointer;
+}
