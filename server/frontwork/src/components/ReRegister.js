@@ -1,11 +1,14 @@
-import React from "react";
-import { useForm, Controller } from "react-hook-form";
-import axios from "axios";
 import "../css/Register.css";
+
+import React, { useEffect, useState } from "react";
+import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 function Register() {
-    const { handleSubmit, control, setError, formState } = useForm();
-    const navigate = useNavigate();
+  const { handleSubmit, control, setError, formState, setValue } = useForm();
+  const navigate = useNavigate();
+  const userId = window.sessionStorage.getItem("accessId");
 
   const onSubmit = async (data) => {
     const { password, confirmPassword} = data;
@@ -14,23 +17,33 @@ function Register() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:8080/api/register", data);
-      console.log(response.data);
-      alert("회원가입을 환영합니다.");
-      alert("로그인 화면으로 이동해주세요");
-      navigate("/login");
+      await axios.post("http://localhost:8080/api/register", data);
+      alert("회원정보가 성공적으로 수정되었습니다.");
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
-    console.log(data);
   };
+  useEffect(() => {
+    const fetchAccount = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/api/reregister/${userId}`);
+        setValue("userId", response.data.userId);
+        setValue("email", response.data.email);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchAccount();
+  }, [userId]);
+
   const gotoHome = () => {
     navigate("/");
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="register-form">
-      <h1 className="register-h1">회원가입</h1>
+      <h1 className="register-h1">회원정보수정</h1>
 
       <label htmlFor="userId" className="register-label">아이디</label>
       <Controller
@@ -38,7 +51,7 @@ function Register() {
         control={control}
         defaultValue=""
         rules={{ required: "아이디를 입력해주세요" }}
-        render={({ field }) => <input className="register-input" id="userId" type="text" {...field} />}
+        render={({ field }) => <input className="register-input" id="userId" type="text" readOnly {...field} />}
       />
       {formState.errors.userId && <p>{formState.errors.userId.message}</p>}
 
@@ -72,7 +85,7 @@ function Register() {
       />
       {formState.errors.email && <p>{formState.errors.email.message}</p>}
 
-      <button type="submit" className="register-button">회원가입</button>
+      <button type="submit" className="register-button">수정</button>
       <button className="register-button" onClick={gotoHome}>취소</button>
     </form>
   );

@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -74,6 +75,21 @@ public class PostingController {
         newPosting.setRegistrationDate(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")).toString());
         postingDB.save(newPosting);
     }
+    @GetMapping("/community/rewrite/{postingNumber}")
+    public Posting setRewritePosting(@PathVariable int postingNumber) {
+        Posting setData = postingDB.findByPostingSeq(postingNumber);
+
+        return setData;
+    }
+    @PostMapping("/community/rewrite/{postingNumber}")
+    public void rewrewritePosting(@PathVariable int postingNumber, @RequestBody Map<String,String> data) {
+        Posting rePosting = postingDB.findByPostingSeq(postingNumber);
+
+        rePosting.setTitle(data.get("title"));
+        rePosting.setContent(data.get("content"));
+        rePosting.setRegistrationDate(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")).toString());
+        postingDB.save(rePosting);
+    }
     @GetMapping("/community/read/{postingNumber}")
     public Map<String, Object> readPosting(@PathVariable int postingNumber) {
         Map<String, Object> getSumData = new HashMap<>();
@@ -86,5 +102,43 @@ public class PostingController {
         getSumData.put("replys", getReplys);
 
         return getSumData;
+    }
+    @PostMapping("/community/commwrite")
+    public Map<String, Object> writeComment(@RequestBody Map<String,String> data) {
+        Comment newComment = new Comment();
+        Account accessAccount = accountDB.findByUserId(data.get("userId"));
+        Posting currenPosting = postingDB.findByPostingSeq(Integer.parseInt(data.get("postingSeq")));
+
+        newComment.setAccount(accessAccount);
+        newComment.setPosting(currenPosting);
+        newComment.setContent(data.get("content"));
+        newComment.setGroupSeq(Integer.parseInt(data.get("groupSeq")));
+        newComment.setRegistrationDate(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")).toString());
+        commentDB.save(newComment);
+
+        return readPosting(Integer.parseInt(data.get("postingSeq")));
+    }
+    @DeleteMapping("/community/delete/{postingNumber}")
+    public List<Posting> deletePosting(@PathVariable int postingNumber) {
+        Posting deleteData = postingDB.findByPostingSeq(postingNumber);
+
+        postingDB.delete(deleteData);
+
+        List<Posting> allData = postingDB.findAll();
+        Collections.reverse(allData);
+
+        return allData;
+    }
+    @DeleteMapping("/community/commdelete/{postingNumber}/{commentNumber}")
+    public Map<String, Object> deleteComment(@PathVariable int postingNumber, @PathVariable int commentNumber) {
+        Comment deleteData = commentDB.findByCommentSeq(commentNumber);
+
+        if (deleteData.getGroupSeq() == 0) {
+            List<Comment> deleteReply = commentDB.findByGroupSeq(deleteData.getCommentSeq());
+            commentDB.deleteAll(deleteReply);
+        }
+        commentDB.delete(deleteData);
+
+        return readPosting(postingNumber);
     }
 }

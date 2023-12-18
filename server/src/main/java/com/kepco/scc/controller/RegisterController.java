@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +42,13 @@ public class RegisterController {
         accountRepository.save(account);
         
         return ResponseEntity.ok("회원가입 성공. 환영합니다.");
+    }
+
+    @GetMapping("/api/reregister/{userId}")
+    public Account reRegister(@PathVariable String userId) {
+        Account setAccount = accountRepository.findByUserId(userId);
+
+        return setAccount;
     }
 }
 

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Layout from './components/Layout';
@@ -8,12 +7,13 @@ import Subsidy from './components/Subsidy';
 import Ranking from './components/Ranking';
 import Banner from './components/Banner';
 import Login from './components/Login';
-import Logout from './components/Logout';
+// import Logout from './components/Logout';
 import SearchCarDetail from './components/SearchCarDetail';
 import SaleCompany from './components/SaleCompany';
 import ChargeCenter from './components/ChargeCenter';
 import PostingPage from './components/PostingPage';
 import Register from './components/Register';
+import ReRegister from './components/ReRegister';
 import './App.css'
 
 function App() {
@@ -39,14 +39,15 @@ function App() {
                   <Route path='/search_car_detail' element={<SearchCarDetail/>} />
                   <Route path='/sale_company' element={<SaleCompany />} />
                   <Route path='/charge_center' element={<ChargeCenter />} />
-                  <Route path='/free_posting' element={<PostingPage />} />
+                  <Route path='/community*' element={<PostingPage />} />
                 </Routes>
               </Layout>
             }
           />
           <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout/>} />
+          {/* <Route path="/logout" element={<Logout/>} /> */}
           <Route path="/showRegister" element={<Register/>}/>
+          <Route path="/showReRegister" element={<ReRegister/>}/>
         </Routes>
       </Router>
     );
