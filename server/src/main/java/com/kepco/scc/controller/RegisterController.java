@@ -34,14 +34,19 @@ public class RegisterController {
         String email = accountlist.get("email");
         String now = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")).toString();
         
-        Account account = new Account();
-        account.setUserId(userId);
-        account.setPassword(password);
-        account.setEmail(email);
-        account.setRegistrationDate(now);
-        accountRepository.save(account);
-        
-        return ResponseEntity.ok("회원가입 성공. 환영합니다.");
+        if (accountRepository.findByUserId(userId)==null) {
+            Account account = new Account();
+            account.setUserId(userId);
+            account.setPassword(password);
+            account.setEmail(email);
+            account.setRegistrationDate(now);
+            accountRepository.save(account);
+            
+            return ResponseEntity.ok("회원가입 성공. 환영합니다.");
+        }
+        else {
+            return ResponseEntity.ok("중복된 ID 입니다.");
+        }
     }
 
     @GetMapping("/api/reregister/{userId}")

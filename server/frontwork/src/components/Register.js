@@ -15,10 +15,14 @@ function Register() {
     }
     try {
       const response = await axios.post("http://localhost:8080/api/register", data);
-      console.log(response.data);
-      alert("회원가입을 환영합니다.");
-      alert("로그인 화면으로 이동해주세요");
-      navigate("/login");
+      if (response.data === "회원가입 성공. 환영합니다.") {
+        alert("회원가입을 환영합니다.");
+        alert("로그인 화면으로 이동해주세요");
+        navigate("/login");
+      }
+      else {
+        alert("중복된 ID입니다.");
+      }
     } catch (err) {
       console.error(err);
     }

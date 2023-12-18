@@ -30,8 +30,13 @@ const ReadPosting = () => {
     fetchData();
   }, []);
   const groupNumbering = (data) => {
-    setValue("groupSeq", data);
-    scrollToForm();
+    if (userId === null) {
+      alert("먼저 로그인을 해주세요");
+    }
+    else {
+      setValue("groupSeq", data);
+      scrollToForm();
+    }
   }
   const scrollToForm = () => {
     const formElement = document.getElementById("input-text");
@@ -40,11 +45,16 @@ const ReadPosting = () => {
     }
   };
   const onSubmit = async (data) => {
-    try {
-      const response = await axios.post("http://localhost:8080/community/commwrite", data);
-      setSumData(response.data);
-    } catch (error) {
-      console.log(error);
+    if (userId === null) {
+      alert("먼저 로그인을 해주세요");
+    }
+    else {
+      try {
+        const response = await axios.post("http://localhost:8080/community/commwrite", data);
+        setSumData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
   const deletePosting = async (postingNumber) => {
@@ -81,10 +91,11 @@ const ReadPosting = () => {
             <button onClick={() => groupNumbering(0)}>댓글쓰기</button>
             <NavLink to="/community"><button type="button">게시글로</button></NavLink>
             {sessionStorage.getItem("accessId")!==null && (sessionStorage.getItem("authority")==="1" || (sessionStorage.getItem("authority")==="0" && sumData.posting.account.userId===sessionStorage.getItem("accessId"))) && (
-              <>
-                <NavLink to={`/community/rewrite/${sumData.posting.postingSeq}`}><button type="button">수정</button></NavLink>
-                <button className="delete-posting" onClick={() => deletePosting(sumData.posting.postingSeq)}>삭제</button>
-              </>
+              <NavLink to={`/community/rewrite/${sumData.posting.postingSeq}`}><button type="button">수정</button></NavLink>
+            )
+            }
+            {sessionStorage.getItem("accessId")!==null && (sessionStorage.getItem("authority")==="1" || (sessionStorage.getItem("authority")==="0" && sumData.posting.account.userId===sessionStorage.getItem("accessId"))) && (
+              <button className="delete-posting" onClick={() => deletePosting(sumData.posting.postingSeq)}>삭제</button>
             )
             }
           </div>
@@ -103,9 +114,10 @@ const ReadPosting = () => {
                 <h3>{comment.content}</h3>
                 <h3>{comment.registrationDate}</h3>
                 <button className="comm-btn" onClick={() => groupNumbering(comment.commentSeq)}>댓글쓰기</button>
-                {comment.account.userId === userId && (
+                {sessionStorage.getItem("accessId")!==null && (sessionStorage.getItem("authority")==="1" || (sessionStorage.getItem("authority")==="0" && sumData.posting.account.userId===sessionStorage.getItem("accessId"))) && (
                   <button className="comm-btn" onClick={() => deleteComment(postingSeq, comment.commentSeq)}>댓글삭제</button>
-                )}
+                )
+                }
               </div>
               {sumData.replys.filter((reply) => comment.commentSeq===reply.groupSeq).map(reply => (
                 <div className="reply-container" key={reply.id}>
@@ -115,9 +127,10 @@ const ReadPosting = () => {
                   )}
                   <h4>{reply.content}</h4>
                   <h4>{reply.registrationDate}</h4>
-                  {reply.account.userId === userId && (
+                  {sessionStorage.getItem("accessId")!==null && (sessionStorage.getItem("authority")==="1" || (sessionStorage.getItem("authority")==="0" && sumData.posting.account.userId===sessionStorage.getItem("accessId"))) && (
                     <button className="comm-btn" onClick={() => deleteComment(postingSeq, reply.commentSeq)}>댓글삭제</button>
-                  )}
+                  )
+                  }
                 </div>
               ))}
               <hr></hr>
