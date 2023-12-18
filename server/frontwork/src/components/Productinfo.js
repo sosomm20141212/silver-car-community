@@ -3,14 +3,18 @@ import {BrowserRouter,Link, useParams} from "react-router-dom"
 import '../css/Productinfo.css';
 
 const Productinfo = ({vehicleName, manufacturer, price, color, dimensions, cargoSize,
-    loadCapacity, canopy, wheels, wheelSize, battery, maximumOutput,view,
+    loadCapacity, canopy, wheels, wheelSize, battery, maximumOutput,
     maximumSpeed, mileage, chargingTime, weight}) =>{
+
+        const addComma = (price) => {
+            return new Intl.NumberFormat('ko-KR').format(price);
+        }
+
         return (
             <div className='product_detail'>
                 <div>
                     <h3 id='product_info_title'>Product Info</h3>
                     <h1>{vehicleName}</h1>
-                    {view!=null&&<div>조회수 : {view}</div>}
                 </div>
                 
                 <div className='product_info'>
@@ -77,9 +81,9 @@ const Productinfo = ({vehicleName, manufacturer, price, color, dimensions, cargo
                         </table>
                         <div className='product_price'>
                             <span>제품 가격</span>
-                            <p id="price">{price}</p>
+                            <p id="price">{addComma(price)}원</p>
                         </div>
-                        <Link to={`https://search.shopping.naver.com/search/all?query=전동차${vehicleName}`}>
+                        <Link to={`https://search.shopping.naver.com/search/all?query=전동차${vehicleName}`} target='_black'>
                         <button className='Order_btn'><span>주문하기</span></button>
                         </Link>
                     </div>
