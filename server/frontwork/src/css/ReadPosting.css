@@ -40,12 +40,16 @@
   grid-column: 1/4;
   font-size: 35px;
   padding-left: 20px;
+  border: 2px solid #ebebeb;
+  border-radius: 5px;
 }
 .posting-container p:nth-of-type(4) {
   grid-row: 3;
   grid-column: 1/4;
   font-size: 20px;
   padding-left: 20px;
+  border: 2px solid #ebebeb;
+  border-radius: 5px;
 }
 .posting-control button {
   border: none;
@@ -90,10 +94,27 @@ hr {
 .comment-form textarea {
   overflow:hidden;
   padding:10px;
-  max-width:700px;
+  max-width:865px;
   font-size:14px;
-  margin:50px auto;
+  margin:20px auto;
   display:block;
   border-radius:10px;
-  border:6px solid #556677;
+  border:3.5px solid #708091;
+  width: 870px;
+}
+
+.comment-form button {
+  width: 50px;
+  height: 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFA74E;
+  display: inline-block;
+  position: relative;
+}
+
+.comment-form button:hover {
+  background-color: #FF7E00;
+  cursor: pointer;
 }
