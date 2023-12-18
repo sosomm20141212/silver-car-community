@@ -2,19 +2,19 @@ import "../css/BulletinBoard.css";
 
 import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
+import {NavLink, useNavigate} from "react-router-dom";
 import axios from "axios";
 
-const BulletinBoard = ({setMode}) => {
+const BulletinBoard = () => {
   const [postingList, setPostingList] = useState([]);
-  const [originalData, setOriginalData] = useState([]);
   const {register, handleSubmit} = useForm();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAllData = async () => {
       try {
         const response = await axios.get("http://localhost:8080/community");
         setPostingList(response.data);
-        setOriginalData(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -30,20 +30,26 @@ const BulletinBoard = ({setMode}) => {
     }
   };
   const writeModeChange = () => {
-    setMode(-1);
+    if (sessionStorage.getItem("accessId") === null) {
+      alert("먼저 로그인을 해주세요");
+    }
+    else {
+      navigate("write");
+    }
   };
-  const readModeChange = (postingSeq) => {
-    setMode(postingSeq);
-  }
-  const showAllData = () => {
-    setPostingList(originalData);
+  const fetchAllData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/community");
+      setPostingList(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
-
   return (
     <div>
       <div className="write">
         <button onClick={writeModeChange}>글쓰기</button>
-        <button onClick={showAllData}>전체글 보기</button>
+        <button onClick={fetchAllData}>전체글 보기</button>
       </div>
       <div className="search-container">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -65,7 +71,7 @@ const BulletinBoard = ({setMode}) => {
           <div className="blog-body">
             <div className="blog-title">
               <h1>{post.postingSeq}</h1>
-              <h1><button onClick={() => readModeChange(post.postingSeq)}>{post.title}</button></h1>
+              <h1><NavLink to={`/community/read/${post.postingSeq}`}><button>{post.title}</button></NavLink></h1>
               <h1>{post.account.userId}</h1>
             </div>
           </div>

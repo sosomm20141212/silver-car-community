@@ -1,28 +1,18 @@
-import React, {useEffect, useState} from "react";
-
+import React from "react";
+import {Routes, Route} from 'react-router-dom';
 import BulletinBoard from "./BulletinBoard";
 import WritePosting from "./WritePosting";
+import ReWritePosting from "./ReWritePosting";
 import ReadPosting from "./ReadPosting";
 
 const PostingPage = () => {
-  const [mode, setMode] = useState(0);
-
-  const changeMode = (newMode) => {
-    setMode(newMode);
-  };
-  let content;
-  if (mode === 0) {
-    content = <BulletinBoard setMode={changeMode} />;
-  } else if (mode === -1) {
-    content = <WritePosting setMode={changeMode} />;
-  } else {
-    content = <ReadPosting setMode={changeMode} postingNumber={mode} />;
-  }
-
   return (
-      <div>
-        {content}
-      </div>
+      <Routes>
+        <Route path="/*" element={<BulletinBoard></BulletinBoard>}></Route>
+        <Route path="write" element={<WritePosting></WritePosting>}></Route>
+        <Route path="rewrite/:postingSeq" element={<ReWritePosting></ReWritePosting>}></Route>
+        <Route path="read/:postingSeq" element={<ReadPosting></ReadPosting>}></Route>
+      </Routes>
   );
 }
 

@@ -11,7 +11,8 @@
 
 .login a,
 .logout a,
-.register a {
+.register a,
+.logout button {
   text-decoration: none;
   color: #666666; 
   font-size: 18px;
@@ -19,9 +20,15 @@
   margin-right:25px;
 }
 
+.logout button {
+  border: none;
+  background-color: #f5f5f5;
+}
+
 .login a:hover,
 .logout a:hover,
-.register a:hover {
+.register a:hover,
+.logout button:hover {
   color: #FFA74E;
   font-weight: bold;
 }

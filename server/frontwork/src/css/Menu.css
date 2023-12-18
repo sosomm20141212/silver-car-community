@@ -9,7 +9,7 @@
 .search_car a,
 .sale_company a,
 .charge_center a,
-.free_posting a{
+.community a{
     color:white;
     font-size:25px;
     margin: 0 40px;
@@ -22,7 +22,7 @@
 .search_car a:hover,
 .sale_company a:hover,
 .charge_center a:hover,
-.free_posting a:hover{
+.community a:hover{
    background-color: #FF7E00;
    border-radius: 5px;
 }

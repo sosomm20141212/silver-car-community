@@ -2,20 +2,33 @@ import "../css/WritePosting.css";
 
 import React, {useEffect} from "react";
 import {useForm} from "react-hook-form";
-import {NavLink, useNavigate} from 'react-router-dom';
+import {NavLink, useNavigate, useParams} from 'react-router-dom';
 import axios from "axios";
 
 const WritePosting = () => {
   const {register, handleSubmit, setValue} = useForm();
   const navigate = useNavigate();
-
+  const {postingSeq} = useParams();
+  
   useEffect(() => {
-    setValue("userId", sessionStorage.getItem("accessId"));
-  }, [setValue]);
+    const fetchPosting = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/community/rewrite/${postingSeq}`);
+        setValue("postingSeq", postingSeq);
+        setValue("title", response.data.title);
+        setValue("content", response.data.content);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPosting();
+  }, []);
+
+
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:8080/community/write", data);
-      navigate("/community");
+      await axios.post(`http://localhost:8080/community/rewrite/${postingSeq}`, data);
+      navigate(`/community/read/${postingSeq}`);
     } catch (error) {
       console.log(error);
     }
