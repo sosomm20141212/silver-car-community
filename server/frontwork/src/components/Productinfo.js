@@ -9,6 +9,7 @@ const Productinfo = ({vehicleName, manufacturer, price, color, dimensions, cargo
         const addComma = (price) => {
             return new Intl.NumberFormat('ko-KR').format(price);
         }
+        const displayValue = canopy === 0 ? 'N' : 'Y';
 
         return (
             <div className='product_detail'>
@@ -44,7 +45,7 @@ const Productinfo = ({vehicleName, manufacturer, price, color, dimensions, cargo
                             </tr>
                             <tr>
                                 <td>그늘막 유무</td>
-                                <td>{canopy}</td>
+                                <td>{displayValue}</td>
                             </tr>
                             <tr>
                                 <td>바퀴 3륜/4륜</td>
