@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import "../css/Register.css";
 import { useNavigate } from "react-router-dom";
+
 function Register() {
     const { handleSubmit, control, setError, formState } = useForm();
     const navigate = useNavigate();

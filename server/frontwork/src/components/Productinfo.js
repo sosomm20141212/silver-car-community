@@ -1,12 +1,11 @@
-
 import React from 'react';
 import {BrowserRouter,Link, useParams} from "react-router-dom"
 import '../css/Productinfo.css';
+
 const Productinfo = ({vehicleName, manufacturer, price, color, dimensions, cargoSize,
     loadCapacity, canopy, wheels, wheelSize, battery, maximumOutput,view,
     maximumSpeed, mileage, chargingTime, weight}) =>{
         return (
-
             <div className='product_detail'>
                 <div>
                     <h3 id='product_info_title'>Product Info</h3>
@@ -76,7 +75,6 @@ const Productinfo = ({vehicleName, manufacturer, price, color, dimensions, cargo
                                 <td>{weight}</td>
                             </tr>
                         </table>
-
                         <div className='product_price'>
                             <span>제품 가격</span>
                             <p id="price">{price}</p>
@@ -84,17 +82,9 @@ const Productinfo = ({vehicleName, manufacturer, price, color, dimensions, cargo
                         <Link to={`https://search.shopping.naver.com/search/all?query=전동차${vehicleName}`}>
                         <button className='Order_btn'><span>주문하기</span></button>
                         </Link>
-                     
                     </div>
-                    
-
-            
-                
                 </div>
-
             </div>
-            
-        
         );
     };
 

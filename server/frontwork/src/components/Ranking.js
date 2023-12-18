@@ -65,7 +65,6 @@ function Ranking() {
                                     <div key={index + groupIndex * 3 - 1} className={`sub-image-container ${index === (currentIndex - groupIndex * 3 + 1) % 3 ? 'active' : 'inactive'}`}>
                                         <div className={`image-info ${index === (currentIndex - groupIndex * 3 + 1) % 3 ? 'active' : 'inactive'}`}>
                                             <p>{`${index + groupIndex * 3 -1}등 `}</p>
-                                        
                                         </div>
 
                                         <img

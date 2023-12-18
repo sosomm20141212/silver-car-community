@@ -7,7 +7,6 @@ import Subsidy from './components/Subsidy';
 import Ranking from './components/Ranking';
 import Banner from './components/Banner';
 import Login from './components/Login';
-// import Logout from './components/Logout';
 import SearchCarDetail from './components/SearchCarDetail';
 import SaleCompany from './components/SaleCompany';
 import ChargeCenter from './components/ChargeCenter';
@@ -45,7 +44,6 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/logout" element={<Logout/>} /> */}
           <Route path="/showRegister" element={<Register/>}/>
           <Route path="/showReRegister" element={<ReRegister/>}/>
         </Routes>

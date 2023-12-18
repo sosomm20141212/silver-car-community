@@ -13,7 +13,6 @@ function Layout({ children }) {
                   <img src='./silvermotion.png' alt='silvermotion' id='Logo_img'></img>
               </a>
             </div>
-            
           <Menu />
           {children}
           <Footer />

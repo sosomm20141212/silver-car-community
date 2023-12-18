@@ -42,6 +42,7 @@ const ReadPosting = () => {
     const formElement = document.getElementById("input-text");
     if (formElement) {
       formElement.scrollIntoView({ behavior: "smooth", block: "center" });
+      formElement.focus();
     }
   };
   const onSubmit = async (data) => {
@@ -108,7 +109,7 @@ const ReadPosting = () => {
             <div className="none-posting-container" key={comment.id}>
               <div className="comment-container">
                 <h3>{comment.account.userId}</h3>
-                {comment.account.userId === userId && (
+                {comment.account.userId === sumData.posting.account.userId && (
                   <h3 id='posting-writer'>작성자</h3>
                 )}
                 <h3 id='write-dateshow'>{comment.registrationDate}</h3>
@@ -122,7 +123,7 @@ const ReadPosting = () => {
               {sumData.replys.filter((reply) => comment.commentSeq===reply.groupSeq).map(reply => (
                 <div className="reply-container" key={reply.id}>
                   <h4>↳&nbsp;{reply.account.userId}</h4>
-                  {reply.account.userId === userId && (
+                  {reply.account.userId === sumData.posting.account.userId && (
                     <h4 id="posting-writer">작성자</h4>
                   )}
                   <h4 id='write-dateshow'>{reply.registrationDate}</h4>
