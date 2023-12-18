@@ -80,11 +80,34 @@
   padding: 10px;
   margin-bottom: 10px;
 }
+.comment-container h3:nth-of-type(1) {
+  display: inline-block;
+}
+#posting-writer {
+  display: inline-block;
+  margin-left: 10px;
+  color: dimgrey;
+  font-size: 13px;
+  font-weight: 100;
+  background-color: #ffa74e9b;
+  border-radius: 7px;
+  padding: 1.5px;
+}
+#write-dateshow {
+  display: inline-block;
+  margin-left: 10px;
+  color: dimgrey;
+  font-size: 13px;
+  font-weight: 100;
+}
 
 .reply-container {
   background-color: #f0f0f0;
   padding: 5px;
   margin-bottom: 5px;
+}
+.reply-container h4:nth-of-type(1) {
+  display: inline-block;
 }
 
 hr {
@@ -147,4 +170,11 @@ hr {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 30px;
+}
+
+#posting-main-comment {
+  font-weight: 500;
+}
+#posting-main-reply {
+  font-weight: 500;
 }

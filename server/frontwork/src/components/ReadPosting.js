@@ -109,10 +109,10 @@ const ReadPosting = () => {
               <div className="comment-container">
                 <h3>{comment.account.userId}</h3>
                 {comment.account.userId === userId && (
-                  <h3>작성자</h3>
+                  <h3 id='posting-writer'>작성자</h3>
                 )}
-                <h3>{comment.content}</h3>
-                <h3>{comment.registrationDate}</h3>
+                <h3 id='write-dateshow'>{comment.registrationDate}</h3>
+                <h3 id='posting-main-comment'>{comment.content}</h3>
                 <button className="comm-btn" onClick={() => groupNumbering(comment.commentSeq)}>댓글쓰기</button>
                 {sessionStorage.getItem("accessId")!==null && (sessionStorage.getItem("authority")==="1" || (sessionStorage.getItem("authority")==="0" && sumData.posting.account.userId===sessionStorage.getItem("accessId"))) && (
                   <button className="comm-btn" onClick={() => deleteComment(postingSeq, comment.commentSeq)}>댓글삭제</button>
@@ -123,10 +123,10 @@ const ReadPosting = () => {
                 <div className="reply-container" key={reply.id}>
                   <h4>↳&nbsp;{reply.account.userId}</h4>
                   {reply.account.userId === userId && (
-                    <h4>&nbsp;&nbsp;&nbsp;작성자</h4>
+                    <h4 id="posting-writer">작성자</h4>
                   )}
-                  <h4>&nbsp;&nbsp;&nbsp;{reply.content}</h4>
-                  <h4>&nbsp;&nbsp;&nbsp;{reply.registrationDate}</h4>
+                  <h4 id='write-dateshow'>{reply.registrationDate}</h4>
+                  <h4 id='posting-main-reply'>&nbsp;&nbsp;&nbsp;{reply.content}</h4>
                   {sessionStorage.getItem("accessId")!==null && (sessionStorage.getItem("authority")==="1" || (sessionStorage.getItem("authority")==="0" && sumData.posting.account.userId===sessionStorage.getItem("accessId"))) && (
                     <button className="comm-btn" onClick={() => deleteComment(postingSeq, reply.commentSeq)}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;댓글삭제</button>
                   )
