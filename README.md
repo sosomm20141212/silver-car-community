@@ -30,5 +30,3 @@ KepcoA 1조 / SpringBoot와 React를 활용한 노약자 대상 전동차 커뮤
 🌐**테스트 및 데이터베이스**
 <img src="https://img.shields.io/badge/selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white">
 <img src="https://img.shields.io/badge/mariadb-003545?style=for-the-badge&logo=mariadb&logoColor=white">
-
-ddd
