@@ -109,18 +109,17 @@ const ReadPosting = () => {
               </div>
               {sumData.replys.filter((reply) => comment.commentSeq===reply.groupSeq).map(reply => (
                 <div className="reply-container" key={reply.id}>
-                  <h4>{reply.account.userId}</h4>
+                  <h4>↳&nbsp;{reply.account.userId}</h4>
                   {reply.account.userId === userId && (
-                    <h4>작성자</h4>
+                    <h4>&nbsp;&nbsp;&nbsp;작성자</h4>
                   )}
-                  <h4>{reply.content}</h4>
-                  <h4>{reply.registrationDate}</h4>
+                  <h4>&nbsp;&nbsp;&nbsp;{reply.content}</h4>
+                  <h4>&nbsp;&nbsp;&nbsp;{reply.registrationDate}</h4>
                   {reply.account.userId === userId && (
-                    <button className="comm-btn" onClick={() => deleteComment(postingSeq, reply.commentSeq)}>댓글삭제</button>
+                    <button className="comm-btn" onClick={() => deleteComment(postingSeq, reply.commentSeq)}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;댓글삭제</button>
                   )}
                 </div>
               ))}
-              <hr></hr>
             </div>
           ))}
         </div>

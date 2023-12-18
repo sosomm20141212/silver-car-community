@@ -22,6 +22,7 @@
   padding-left: 20px;
   padding-top: 10px;
   border-radius: 15px 0 0 15px;
+  color: #12345b;
 }
 .posting-container p:nth-of-type(2){
   font-size: 20px;
@@ -104,17 +105,46 @@ hr {
 }
 
 .comment-form button {
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 40px;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   background-color: #FFA74E;
   display: inline-block;
   position: relative;
+  margin-left: 830px;
+  font-size: 18px;
 }
 
 .comment-form button:hover {
   background-color: #FF7E00;
   cursor: pointer;
+}
+
+.none-posting-container{
+  margin-top: 15px;
+}
+
+.comment-container {
+   font-size: 15px;
+   color: black;
+   border-radius: 3px;
+}
+
+.comment-container h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.reply-container {
+  font-size: 15px;
+  color: rgb(59, 59, 59);
+  border-radius: 3px;
+}
+
+.reply-container h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 30px;
 }

@@ -31,6 +31,7 @@
 .logout button:hover {
   color: #FFA74E;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .loggined-id{
