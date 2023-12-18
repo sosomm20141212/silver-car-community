@@ -54,9 +54,6 @@ const Search=()=> {
     setNames(e.target.value);
   } 
 
-  console.log(Names);
-  console.log(productinfo);
-
   if (loading) return (<div className='loading'><h1>로딩중..</h1></div>);
   if (error) return (
     <div className='error'>
@@ -106,7 +103,7 @@ const Search=()=> {
                 
                   <button id="Search_btn" onClick={()=>{                 
                                         axios.get("/vehicleinfo",{params:{vehicleName: Names}})
-                                        .then((res2)=>setProductinfo(res2.data), console.log(productinfo))
+                                        .then((res2)=>setProductinfo(res2.data))
                                         .catch(()=>console.log('요청실패'))
                                     }}>검색</button>
             {/* </form> */}

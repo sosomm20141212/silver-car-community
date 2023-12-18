@@ -26,7 +26,6 @@ const ProductList = ()=>{
         fetch('/vehicle',{
             method:"GET"
         }).then(res=>res.json()).then(res=>{
-            console.log(1,res);
             setProductList(res);
         })
     },[]);
@@ -44,7 +43,7 @@ const ProductList = ()=>{
                             <li key={product.vehicleName}>
                                     <button className='model_name' onClick={()=>{
                                         axios.get("/vehicleinfo",{params:{vehicleName: product.vehicleName}})
-                                        .then((res)=>setProductinfo(res.data), console.log(productinfo))
+                                        .then((res)=>setProductinfo(res.data))
                                         .catch(()=>console.log('요청실패'))
                                     }}>
                                         {product.vehicleName}</button>
