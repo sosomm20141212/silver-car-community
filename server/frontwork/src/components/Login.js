@@ -10,7 +10,7 @@
     
     const handleLogin = async (data) => {
       try {
-        const response = await axios.post("http://localhost:8080/api/login", data);
+        const response = await axios.post("http://10.10.21.78:8080/api/login", data);
     
         if (response.data.success === true) {
           // 로그인 성공

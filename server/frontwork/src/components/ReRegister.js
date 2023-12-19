@@ -17,7 +17,7 @@ function Register() {
       return;
     }
     try {
-      await axios.post("http://localhost:8080/api/register", data);
+      await axios.post("http://10.10.21.78:8080/api/register", data);
       alert("회원정보가 성공적으로 수정되었습니다.");
       navigate("/");
     } catch (err) {
@@ -27,7 +27,7 @@ function Register() {
   useEffect(() => {
     const fetchAccount = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/reregister/${userId}`);
+        const response = await axios.get(`http://10.10.21.78:8080/api/reregister/${userId}`);
         setValue("userId", response.data.userId);
         setValue("email", response.data.email);
       } catch (error) {

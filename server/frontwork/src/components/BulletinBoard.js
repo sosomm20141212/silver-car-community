@@ -13,7 +13,7 @@ const BulletinBoard = () => {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/community");
+        const response = await axios.get("http://10.10.21.78:8080/community");
         setPostingList(response.data);
       } catch (error) {
         console.log(error);
@@ -23,7 +23,7 @@ const BulletinBoard = () => {
   }, []);
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:8080/community", data);
+      const response = await axios.post("http://10.10.21.78:8080/community", data);
       setPostingList(response.data);
     } catch (error) {
       console.log(error);
@@ -39,7 +39,7 @@ const BulletinBoard = () => {
   };
   const fetchAllData = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/community");
+      const response = await axios.get("http://10.10.21.78:8080/community");
       setPostingList(response.data);
     } catch (error) {
       console.log(error);

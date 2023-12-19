@@ -15,7 +15,7 @@ function Register() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:8080/api/register", data);
+      const response = await axios.post("http://10.10.21.78:8080/api/register", data);
       if (response.data === "회원가입 성공. 환영합니다.") {
         alert("회원가입을 환영합니다.");
         alert("로그인 화면으로 이동해주세요");

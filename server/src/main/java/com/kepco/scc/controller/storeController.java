@@ -13,7 +13,7 @@ import com.kepco.scc.model.Store;
 import com.kepco.scc.repository.StoreRepository;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://10.10.21.78:3000")
 public class storeController {
     @Autowired
     StoreRepository storeRepository;

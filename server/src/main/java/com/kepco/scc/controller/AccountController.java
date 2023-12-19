@@ -19,7 +19,7 @@ import com.kepco.scc.repository.AccountRepository;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://10.10.21.78:3000")
 public class AccountController {
 
     @Autowired
