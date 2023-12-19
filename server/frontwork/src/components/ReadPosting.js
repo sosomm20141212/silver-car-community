@@ -53,6 +53,8 @@ const ReadPosting = () => {
       try {
         const response = await axios.post("http://localhost:8080/community/commwrite", data);
         setSumData(response.data);
+        const formElement = document.getElementById("input-text");
+        formElement.value = "";
       } catch (error) {
         console.log(error);
       }
