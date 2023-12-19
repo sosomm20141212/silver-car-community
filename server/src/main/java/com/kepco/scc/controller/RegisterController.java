@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://10.10.21.78:3000")
 public class RegisterController {
     @Autowired 
     AccountRepository accountRepository;

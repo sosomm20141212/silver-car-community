@@ -10,7 +10,7 @@ function Store() {
   useEffect(() => {
     const fetchData = async () => {
       try{
-        const response = await axios.get('http://localhost:8080/api/store');
+        const response = await axios.get('http://10.10.21.78:8080/api/store');
         setStorelist(response.data);
       } catch(error) {
         console.log(error);
@@ -21,7 +21,7 @@ function Store() {
 
   const handleSearch = async (citySearch) => {
     try{
-      const response = await axios.post('http://localhost:8080/api/store', citySearch);
+      const response = await axios.post('http://10.10.21.78:8080/api/store', citySearch);
       setStorelist(response.data);
       console.log(storelist);
     } catch(error) {

@@ -21,7 +21,7 @@ function Header() {
   const withdraw = async () => {
     if(window.confirm("정말로 탈퇴하시겠습니까?")) {
       try {
-        await axios.delete(`http://localhost:8080/api/withdraw/${userId}`);
+        await axios.delete(`http://10.10.21.78:8080/api/withdraw/${userId}`);
         window.sessionStorage.removeItem('accessId');
         window.sessionStorage.removeItem('authority');
         alert("회원탈퇴가 완료되었습니다. 언제든지 다시 찾아오세요.");

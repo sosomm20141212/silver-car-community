@@ -21,7 +21,7 @@ const ReadPosting = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/community/read/${postingSeq}`);
+        const response = await axios.get(`http://10.10.21.78:8080/community/read/${postingSeq}`);
         setSumData(response.data);
       } catch (error) {
         console.log(error);
@@ -51,8 +51,10 @@ const ReadPosting = () => {
     }
     else {
       try {
-        const response = await axios.post("http://localhost:8080/community/commwrite", data);
+        const response = await axios.post("http://10.10.21.78:8080/community/commwrite", data);
         setSumData(response.data);
+        const formElement = document.getElementById("input-text");
+        formElement.value = "";
       } catch (error) {
         console.log(error);
       }
@@ -61,7 +63,7 @@ const ReadPosting = () => {
   const deletePosting = async (postingNumber) => {
     if(window.confirm("정말로 삭제하시겠습니까?")) {
       try {
-        await axios.delete(`http://localhost:8080/community/delete/${postingNumber}`);
+        await axios.delete(`http://10.10.21.78:8080/community/delete/${postingNumber}`);
         navigate("/community");
       } catch (error) {
         console.log(error);
@@ -71,7 +73,7 @@ const ReadPosting = () => {
   const deleteComment = async (postingNumber, commentNumber) => {
     if(window.confirm("정말로 삭제하시겠습니까?")) {
       try {
-        const response = await axios.delete(`http://localhost:8080/community/commdelete/${postingNumber}/${commentNumber}`);
+        const response = await axios.delete(`http://10.10.21.78:8080/community/commdelete/${postingNumber}/${commentNumber}`);
         setSumData(response.data);
       } catch (error) {
         console.log(error);

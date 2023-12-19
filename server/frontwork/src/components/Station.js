@@ -11,7 +11,7 @@ function Station() {
   useEffect(() => {
     const fetchData = async () => {
       try{
-        const response = await axios.get('http://localhost:8080/api/station');
+        const response = await axios.get('http://10.10.21.78:8080/api/station');
         setStationlist(response.data);
       } catch(error) {
         console.log(error);
@@ -22,7 +22,7 @@ function Station() {
 
   const handleSearch = async (citySearch) => {
     try{
-      const response = await axios.post('http://localhost:8080/api/station', citySearch);
+      const response = await axios.post('http://10.10.21.78:8080/api/station', citySearch);
       setStationlist(response.data);
       console.log(stationlist);
     } catch(error) {

@@ -14,7 +14,7 @@ import com.kepco.scc.model.Station;
 import com.kepco.scc.repository.StationRepository;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://10.10.21.78:3000")
 public class stationController {
     @Autowired
     StationRepository stationRepository;

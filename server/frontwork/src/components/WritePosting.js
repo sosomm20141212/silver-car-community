@@ -14,7 +14,7 @@ const WritePosting = () => {
   }, [setValue]);
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:8080/community/write", data);
+      await axios.post("http://10.10.21.78:8080/community/write", data);
       navigate("/community");
     } catch (error) {
       console.log(error);

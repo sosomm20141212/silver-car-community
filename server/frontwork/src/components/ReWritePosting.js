@@ -13,7 +13,7 @@ const WritePosting = () => {
   useEffect(() => {
     const fetchPosting = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/community/rewrite/${postingSeq}`);
+        const response = await axios.get(`http://10.10.21.78:8080/community/rewrite/${postingSeq}`);
         setValue("postingSeq", postingSeq);
         setValue("title", response.data.title);
         setValue("content", response.data.content);
@@ -27,7 +27,7 @@ const WritePosting = () => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post(`http://localhost:8080/community/rewrite/${postingSeq}`, data);
+      await axios.post(`http://10.10.21.78:8080/community/rewrite/${postingSeq}`, data);
       navigate(`/community/read/${postingSeq}`);
     } catch (error) {
       console.log(error);
